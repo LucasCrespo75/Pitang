@@ -85,7 +85,7 @@ public class UsuarioBean {
 
 		}
 }
-public void alterarUsuario() {
+	public void alterarUsuario() {
 		
 		Usuario usuarioNovo = new Usuario();
 		
@@ -98,10 +98,19 @@ public void alterarUsuario() {
 		
 		this.listarTodos = this.dao.listarTodos();
 		for(Usuario usuarioPesquisa : listarTodos) {
-			if()
+			if(usuarioPesquisa.getEmail().equals(this.email)) {
 		}
 	}
-	
+
+	if(achou) {
+		FacesContext.getCurrentInstance()
+		.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Error!", "Email não cadastrado!!!"));
+	}else {
+		System.out.println("Alterado com sucesso!!");
+		this.dao.alterar(usuarioNovo);
+		this.usuario = new Usuario();
+	}
+}
 	
 
 	public Usuario getUsuario() {
