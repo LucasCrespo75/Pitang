@@ -54,5 +54,37 @@ public class UsuarioBean {
 	//}else {
 		//return "algumLugar.xhtml";
 	}
+	
+	public void cadastroUsuario() {
+		
+		Usuario usuarioNovo = new Usuario();
+		
+		usuarioNovo.setNome(this.nome);
+		usuarioNovo.setEmail(this.email);
+		usuarioNovo.setSenha(this.senha);
+		usuarioNovo.setTelefone(this.telefone);
+		
+		boolean achou = false;
+		
+		this.listarTodos = this.dao.listarTodos();
+		for(Usuario usuarioPesquisa : listarTodos) {
+			if(usuarioPesquisa.getEmail().equals(this.email)) {
+						achou = true;
+	     }
+	
+	}
+	if(achou) {
+		FacesContext.getCurrentInstance()
+		.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Error!", "Email existente!!!"));
+		
+		
+	}else {
+		System.out.println("SUCESSO!!");
+		this.dao.inserir(usuarioNovo);
+		this.usuario = new Usuario();
+
+		}
+}
+
 }
 	
