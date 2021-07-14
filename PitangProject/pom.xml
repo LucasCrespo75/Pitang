@@ -6,7 +6,7 @@
 	<artifactId>com.pitang</artifactId>
 	<packaging>war</packaging>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>Genesys Maven Webapp</name>
+	<name>Pitang Maven Webapp</name>
 	<url>http://maven.apache.org</url>
 	<dependencies>
 		<dependency>
@@ -26,6 +26,7 @@
             <artifactId>jsf-impl</artifactId>
             <version>2.2.13</version>
         </dependency>
+        
 		<!-- PrimeFaces -->
 		<dependency>
             <groupId>org.primefaces</groupId>

@@ -1,3 +1,5 @@
+package controle;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -99,6 +101,7 @@ public class UsuarioBean {
 		this.listarTodos = this.dao.listarTodos();
 		for(Usuario usuarioPesquisa : listarTodos) {
 			if(usuarioPesquisa.getEmail().equals(this.email)) {
+				achou = true;
 		}
 	}
 
@@ -107,10 +110,20 @@ public class UsuarioBean {
 		.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Error!", "Email não cadastrado!!!"));
 	}else {
 		System.out.println("Alterado com sucesso!!");
-		this.dao.alterar(usuarioNovo);
+		this.dao.alterar(usuario);
+		this.dao.inserir(usuarioNovo);
 		this.usuario = new Usuario();
 	}
 }
+
+	public void removerUsuario() {
+
+		
+		
+		
+		
+		
+	}
 	
 
 	public Usuario getUsuario() {
@@ -173,5 +186,5 @@ public class UsuarioBean {
 
 	
 
-}
+
 	

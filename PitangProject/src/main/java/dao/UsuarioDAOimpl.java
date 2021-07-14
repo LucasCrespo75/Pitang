@@ -56,10 +56,10 @@ public class UsuarioDAOimpl implements UsuarioDAO {
 		}
 
 		@Override
-		public Usuario pesquisar(int id_usuario) {
+		public Usuario pesquisar(String email) {
 			
 			EntityManager ent = JpaUtil.getEntityManager();
-			Usuario usuario = ent.find(Usuario.class, id_usuario);
+			Usuario usuario = ent.find(Usuario.class, email);
 			
 			return usuario;
 		}

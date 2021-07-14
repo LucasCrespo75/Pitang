@@ -10,7 +10,7 @@ public interface UsuarioDAO {
 	
 	public void alterar(Usuario usuario);
 	
-	public Usuario pesquisar(int id_usuario);
+	public Usuario pesquisar(String email);
 	
 	public List<Usuario> listarTodos();
 	
