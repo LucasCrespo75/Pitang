@@ -115,7 +115,33 @@ public class UsuarioBean {
 		this.usuario = new Usuario();
 	}
 }
-
+	
+	
+	public void pesquisarUsuario() {
+		
+		Usuario user = dao.pesquisar(email);
+		
+		user.setEmail(this.getEmail());
+		
+		boolean achou = false;
+		
+		this.listarTodos = this.dao.listarTodos();
+		for(Usuario usuarioPesquisa : listarTodos) {
+			if(usuarioPesquisa.getEmail().equals(this.email)) {
+				achou = true;
+				}
+		}
+		
+		if(achou) {
+		System.out.println("Usuario encontrado");
+		
+	 	}else {
+		FacesContext.getCurrentInstance()
+		.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Error!", "Erro, usuario não cadastrado!!!"));
+		
+	 	}
+	}
+	
 	public void removerUsuario() {
 
 		
