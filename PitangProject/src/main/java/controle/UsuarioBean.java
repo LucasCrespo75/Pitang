@@ -35,7 +35,7 @@ public class UsuarioBean {
 		
 	}
 	
-	public void entrar() {
+	public String entrar() {
 		
 		Usuario usuarioDentro = null;
 		
@@ -51,10 +51,11 @@ public class UsuarioBean {
 		usuarioDentro = usuarioPesquisa;
 		}
 		
-	//if(usuarioDentro != null) {
-//		return "entrarParaCadastro.xhtml";
-	//}else {
-		//return "algumLugar.xhtml";
+	if(usuarioDentro != null) {
+		return "entrarParaCadastro.xhtml";
+	}else {
+		return "";
+	}
 	}
 	
 	public void cadastroUsuario() {
@@ -118,8 +119,12 @@ public class UsuarioBean {
 
 	public void removerUsuario() {
 
-		
-		
+		Usuario user = new Usuario();
+		user.add("");
+
+		user.delete("email"); // Retorna false. Nenhum elemento "bar" foi encontrado para deletar.
+		user.delete("email"); // Retorna true. remoção bem sucedida.
+		user.has("email");    // Retorna false. O elemento "foo" não está mais presente.
 		
 		
 		
