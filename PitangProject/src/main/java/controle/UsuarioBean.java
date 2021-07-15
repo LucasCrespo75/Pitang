@@ -35,9 +35,10 @@ public class UsuarioBean {
 		
 	}
 	
-	public void entrar() {
+	public String entrar() {
 		
 		Usuario usuarioDentro = null;
+		
 		
 		this.listarTodos = this.dao.listarTodos();
 		
@@ -46,15 +47,16 @@ public class UsuarioBean {
 			if(usuarioPesquisa.getEmail().equals(this.email)
 				&& usuarioPesquisa.getSenha().equals(this.senha) 
 				&& usuarioPesquisa.getTelefone().equals(this.telefone));
-			
 		
 		usuarioDentro = usuarioPesquisa;
 		}
 		
-	//if(usuarioDentro != null) {
-//		return "entrarParaCadastro.xhtml";
-	//}else {
-		//return "algumLugar.xhtml";
+	if(usuarioDentro != null) {
+		return "index.xhtml";
+	}else {
+		return "";
+	
+	}
 	}
 	
 	public void cadastroUsuario() {
