@@ -28,9 +28,6 @@ public class Usuario {
 	@Column(name = "SENHA", nullable = false)
 	private String senha;
 	
-	//@Column(name = "DDD", nullable = false)
-	//private int ddd;
-	
 	@Column(name = "TELEFONE", nullable = false)
 	private String telefone;
 	
@@ -67,13 +64,6 @@ public class Usuario {
 		this.senha = senha;
 	}
 
-	//public int getDdd() {
-	//	return ddd;
-	//}
-
-	//public void setDdd(int ddd) {
-		//this.ddd = ddd;
-	//}
 
 	public String getTelefone() {
 		return telefone;
