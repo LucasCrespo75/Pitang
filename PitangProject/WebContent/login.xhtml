@@ -18,14 +18,15 @@
 				<p:outputLabel value="Telefone: " />
 				<p:inputText value="#{UsuarioBean.telefone}" />
 				<p:commandButton value="Entrar" action="#{UsuarioBean.entrar}" update="@form" />
+				
 				<p:commandButton value="criarUsuario"
-					onclick="PF('criarUsuario').show();" />
+					onclick="PF('cadastroUsuario').show();" />
 				<p:commandButton value="alterarUsuario"
 					onclick="PF('alterarUsuario').show();" />	
-				<p:commandButton value="removerUsuairo"
-					onclick="PF('criarUsuario').show();" />
+			<!-- 	<p:commandButton value="removerUsuairo"
+					onclick="PF('criarUsuario').show();" />-->
 				<p:commandButton value="pesquisarUsuarios"
-					onclick="PF('criarUsuario').show();" />
+					onclick="PF('pesquisarUsuario').show();" /> 
 			</p:panelGrid>
 		<p:messages id="messages" showDetail="true" closable="true">
 			<p:autoUpdate />
@@ -63,8 +64,16 @@
 				<p:commandButton value="Cadastro" actionListener="#{UsuarioBean.aleterarUsuario}" update="@form" /> 
 			</p:panelGrid>
 		</p:dialog>
-		
-		
+		<!--Pesquisar usuario -->
+		<p:dialog header="Pesquisa" modal="true" visible="false"
+			widgetVar="pesquisarUsuario">
+			<p:panelGrid columns="2">
+				<p:outputLabel value="Email: " />
+				<p:inputText value="#{UsarioBean.email}" />
+				<p:commandButton value="" actionListener="#{UsuarioBean.pesquisarUsuario}" update="@form" /> 
+			</p:panelGrid>
+		</p:dialog>
+	
 	</h:form>
 </h:body>
 </html>

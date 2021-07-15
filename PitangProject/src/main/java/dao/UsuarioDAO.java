@@ -14,7 +14,7 @@ public interface UsuarioDAO {
 	
 	public List<Usuario> listarTodos();
 	
-	public void remover(int id_usuario);
+	public Usuario remover(int id_usuario);
 
 
 
